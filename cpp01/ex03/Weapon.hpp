@@ -14,8 +14,8 @@ class HumanA{
         Weapon&      weaponA;
         std::string name;
     public:
-        void attack();
         HumanA(std::string typeToSet, Weapon& weaponToSet);
+        void attack();
         ~HumanA();
 };
 
