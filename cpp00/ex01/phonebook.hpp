@@ -26,7 +26,7 @@ class Contact
         std::string get_LastName();
         std::string get_NickName();
         std::string get_DarkestSecret();
-        std::string get_PheneNumber();
+        std::string get_PhoneNumber();
 };
 
 class Phonebook{

@@ -1,4 +1,4 @@
-#include "PhoneBook.hpp"
+#include "phonebook.hpp"
 
 // Contact Class methods definition ***************
 void Contact::set_firstname(std::string firstname){
@@ -104,19 +104,28 @@ void Phonebook::Add_contact(){
 
 
     buffer = get_input("enter Last Name");
-    if (buffer == ""){
-        std::cout << "EOF" << std::endl;return ;}
+    if (buffer == "")
+    {
+        std::cout << "EOF" << std::endl;
+        return ;
+    }
     Contacts[Index % 8].set_lastname(buffer);
 
 
      buffer = get_input("enter Nick Name");
-    if (buffer == ""){
-        std::cout << "EOF" << std::endl;return ;}
+    if (buffer == "")
+    {
+        std::cout << "EOF" << std::endl;
+        return ;
+    }
     Contacts[Index % 8].set_nickname(buffer);
 
      buffer = get_input("enter darkest secret");
-    if (buffer == ""){
-        std::cout << "EOF" << std::endl;return ;}
+    if (buffer == "")
+    {
+        std::cout << "EOF" << std::endl;
+        return ;
+    }
     Contacts[Index % 8].set_darkestsecret(buffer);
     buffer = is_valid_num(get_input("enter phone number"));
     if (buffer == ""){
@@ -175,7 +184,7 @@ void DisplayContact(Contact user){
 
 void    Phonebook::Search_contact(){
     
-    Phonebook test;
+    // Phonebook test;
 
     Print_header();
      for (int i = 0; i < Index && i < 8; i++){
@@ -224,6 +233,7 @@ int main()
             continue;
         }
     }
+
 }
 //setw colonne 10 caracteres 
 //trunacate string substr 10 caracteres sssssssssss.
