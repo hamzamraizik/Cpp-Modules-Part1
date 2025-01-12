@@ -2,13 +2,13 @@
 
 int checkLevel(std::string str){
     std::string s = str;
-    if (s == "ERROR")
+    if (s == "DEBUG")
         return 1;
-    else if (s == "WARNING")
-        return 2;
     else if (s == "INFO")
+        return 2;
+    else if (s == "WARNING")
         return 3;
-    else if (s == "DEBUG")
+    else if (s == "ERROR")
         return 4;
     return 0;
 }
@@ -44,21 +44,17 @@ void Harl::complain(std::string level ){
     switch (checkLevel(level))
     {
     case 1:
-        // (this->*ptrs[0])();
         debug();
-        break;
     case 2:
-        (this->*ptrs[1])();
-        break;
+        info();
     case 3:
-        (this->*ptrs[2])();
-        break;
+        // (this->*ptrs[2])();
+        warning();
     case 4:
-        (this->*ptrs[3])();
-        break;
+        // (this->*ptrs[3])();
+        error();
     default:
         std::cout << "not match any of levels!" << std::endl;
-        break;
     };
 }
 
