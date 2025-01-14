@@ -30,7 +30,7 @@ Fixed::Fixed(const int x){
 
 Fixed::Fixed(const float x){
     // std::cout << "Float constructor called" << std::endl;
-    integer = x  * (1 << f_bits);
+    integer = roundf(x  * (1 << f_bits));
 }
 
 int Fixed::toInt(void) const{

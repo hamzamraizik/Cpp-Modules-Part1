@@ -56,7 +56,7 @@ Fixed   Fixed::operator-(const Fixed& a)
 
 Fixed   Fixed::operator/(const Fixed& a)
 {
-    std::cout << "arithmitic operator called\n";
+    // std::cout << "arithmitic operator called\n";
     int x = this->integer / a.integer;
     Fixed   b;
     b.integer = x;
@@ -119,9 +119,10 @@ Fixed   Fixed::operator*(const Fixed& a)
 {
     // std::cout << "arithmitic operator called\n";
     // int x = this->integer * a.integer;
-    // this.integer(x * 256) * (a.integer * 256) Not true
-    //      should i do just: thi.integer * a.integer * 256;
-    int x = (this->integer * a.integer) / (1 >> f_bits);
+    /* this.integer(x * 256) * (a.integer * 256) Not true
+          should i do just: thi.integer * a.integer * 256;
+          */
+    int x = (this->integer * a.integer) / (1 << f_bits);
     Fixed   b;
     b.integer = x;
 
