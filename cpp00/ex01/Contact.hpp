@@ -4,8 +4,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-//By default, class members in C++ are private. so i should 
-// specify wich one is private and wich one is public
 
 class Contact
 {

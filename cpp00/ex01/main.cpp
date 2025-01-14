@@ -37,8 +37,13 @@ std::string Contact::get_DarkestSecret(){
 std::string Contact::get_PhoneNumber(){
     return (Phone_number);
 }
+
 //************************************************* */
 // Phonebook Class methods definition :
+
+Phonebook::Phonebook(){
+    Index = 0;
+}
 
 int CheckIfEmpty(std::string s)
 {
@@ -68,6 +73,7 @@ std::string get_input(std::string to_display){
         return buffer;
     }
 }
+
 int isNumber(std::string buffer){
     for (size_t i = 0; i < buffer.length(); i++){
         if (!isdigit(buffer[i]))
@@ -92,16 +98,16 @@ std::string is_valid_num(std::string input){
     return (input);
 }
 
-void Phonebook::Add_contact(){
+void Phonebook::Add_contact()
+{
     if (Index == 8)
         Index = 0;
+    
     std::string buffer;
-
     buffer = get_input("enter First Name");
     if (buffer == ""){
         std::cout << "EOF" << std::endl;return ;}
     Contacts[Index % 8].set_firstname(buffer);
-
 
     buffer = get_input("enter Last Name");
     if (buffer == "")
@@ -110,7 +116,6 @@ void Phonebook::Add_contact(){
         return ;
     }
     Contacts[Index % 8].set_lastname(buffer);
-
 
      buffer = get_input("enter Nick Name");
     if (buffer == "")
@@ -133,7 +138,8 @@ void Phonebook::Add_contact(){
     Contacts[Index % 8].set_phonenumber(buffer);
     Index++;
 }
-void Print_header()
+
+void    Print_header()
 {
     std::cout << std::left << std::setw(10) << "Index" << "|";
     std::cout << std::left << std::setw(10) << "First Name" << "|";
@@ -174,7 +180,7 @@ void DisplayContact(Contact user){
     std::cout << std::left << std::setw(10) << "---------" << "|"
                 << std::endl;
 
-    
+
     std::cout << std::setw(10) << user.get_FirstName() << "|";
     std::cout << std::setw(10) << user.get_LastName() << "|";
     std::cout << std::setw(10) << user.get_NickName() << "|";
@@ -183,9 +189,6 @@ void DisplayContact(Contact user){
 }
 
 void    Phonebook::Search_contact(){
-    
-    // Phonebook test;
-
     Print_header();
      for (int i = 0; i < Index && i < 8; i++){
         std::cout << std::setw(10) << i << "|";
@@ -205,8 +208,7 @@ void    Phonebook::Search_contact(){
     int x = choice[0] - '0';
     DisplayContact(Contacts[x]);
 }
-//eof 
-//getline >>
+
 int main()
 {
     Phonebook Contactt;
@@ -235,5 +237,3 @@ int main()
     }
 
 }
-//setw colonne 10 caracteres 
-//trunacate string substr 10 caracteres sssssssssss.
