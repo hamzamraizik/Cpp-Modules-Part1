@@ -1,4 +1,4 @@
-SFILES = main.cpp
+SFILES = main.cpp PhoneBook.cpp Contact.cpp
 
 OFILES =$(SFILES:.cpp=.o)
 
@@ -13,11 +13,13 @@ all: $(NAME)
 $(NAME): $(OFILES)
 	$(CPP) $(FLAGS) $(OFILES) -o $@
 
-%.o: %.cpp PhoneBook.hpp Contact.hpp
-	$(CPP) $(FLAGS)  -c $(SFILES) -o $@
+%.o: %.cpp PhoneBook.hpp Contact.hpp Utils.hpp
+	$(CPP) $(FLAGS)  -c $< -o $@
 
 clean:
 	rm -f $(OFILES)
 
 fclean: clean
 	rm -f $(NAME)
+
+re: fclean all

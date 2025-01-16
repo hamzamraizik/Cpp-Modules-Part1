@@ -1,4 +1,4 @@
-SFILES = megaphone.cpp
+SFILES = tests.cpp Account.cpp
 
 OFILES =$(SFILES:.cpp=.o)
 
@@ -6,14 +6,14 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CPP = c++
 
-NAME = megaphone
+NAME = account
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
 	$(CPP) $(FLAGS) $(OFILES) -o $@
 
-%.o: %.cpp
+%.o: %.cpp Account.hpp
 	$(CPP) $(FLAGS)  -c $< -o $@
 
 clean:
