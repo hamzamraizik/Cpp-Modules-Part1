@@ -1,5 +1,17 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(ClapTrap& copyOne){
+    *this = copyOne;
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap& other){
+    this->Name = other.Name;
+    this->HitPoints = other.HitPoints;
+    this->AttackDamage = other.AttackDamage;
+    this->EnergyPoints = other.EnergyPoints;
+    return *this;
+}
+
 ClapTrap::ClapTrap(std::string& name){
     Name = name;
     HitPoints = 10;
