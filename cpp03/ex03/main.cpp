@@ -1,7 +1,6 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(){
     std::string name = "Hamza";
-    FragTrap x(name);
-    x.highFiveGuys();
+    DiamondTrap x(name);
 }
