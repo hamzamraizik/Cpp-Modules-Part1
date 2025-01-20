@@ -1,4 +1,4 @@
-SFILES = main.cpp Zombie.cpp zombieHorde.cpp
+SFILES = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 
 OFILES =$(SFILES:.cpp=.o)
 
