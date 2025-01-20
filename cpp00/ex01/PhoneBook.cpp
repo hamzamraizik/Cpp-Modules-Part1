@@ -1,12 +1,13 @@
 #include "Utils.hpp"
 
-// Phonebook Class methods definition :
+// Phonebook Class functions definition :
+
+PhoneBook::~PhoneBook(){
+
+}
 
 void PhoneBook::Add_contact()
 {
-    if (Index == 8)
-        Index = 0;
-
     std::string buffer;
     buffer = get_input("enter First Name");
     if (buffer == ""){
@@ -42,17 +43,17 @@ void PhoneBook::Add_contact()
         std::cout << "EOF\n";
         return ;}
     contact[Index % 8].set_phonenumber(buffer);
-    Index++;
+    Index = (++Index % 8);
 }
 
 
 void    PhoneBook::Search_contact(){
     Print_header();
-     for (int i = 0; i < Index && i < 8; i++){
-        std::cout << std::setw(10) << i << "|";
-        std::cout << std::setw(10) << ParseIt(contact[i].get_FirstName()) << "|";
-        std::cout << std::setw(10) << ParseIt(contact[i].get_LastName()) << "|";
-        std::cout << std::setw(10) << ParseIt(contact[i].get_NickName()) << "|\n"; 
+     for (int i = 0; i < 8; i++){
+        std::cout << std::right << std::setw(10) << i << "|";
+        std::cout << std::right << std::setw(10) << ParseIt(contact[i].get_FirstName()) << "|";
+        std::cout << std::right << std::setw(10) << ParseIt(contact[i].get_LastName()) << "|";
+        std::cout << std::right << std::setw(10) << ParseIt(contact[i].get_NickName()) << "|\n"; 
     }
     std::string choice;
     if (!getline(std::cin, choice)){

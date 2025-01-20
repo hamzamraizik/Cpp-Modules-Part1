@@ -10,6 +10,7 @@ class PhoneBook{
         void Add_contact();
         void Search_contact();
         PhoneBook();
+        ~PhoneBook();
 };
 
 #endif

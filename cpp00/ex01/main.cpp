@@ -14,6 +14,14 @@ int CheckIfEmpty(std::string s)
     return 0;
 }
 
+bool Not_printable(std::string str){
+    for (size_t i = 0; i < str.length(); i++){
+        if (!(str[i] >= 32 && str[i] <= 126))
+            return true;
+    }
+    return false;
+}
+
 std::string get_input(std::string to_display){
     std::string buffer;
     while (true)
@@ -25,6 +33,10 @@ std::string get_input(std::string to_display){
         }
         if (CheckIfEmpty(buffer)){
             std::cout << "invalid!\n";
+            continue;
+        }
+        if (Not_printable(buffer)){
+                  std::cout << "None Printable char reached!\n";
             continue;
         }
         return buffer;
@@ -58,10 +70,10 @@ std::string is_valid_num(std::string input){
 
 void    Print_header()
 {
-    std::cout << std::setw(10) << "Index" << "|";
-    std::cout << std::setw(10) << "First Name" << "|";
-    std::cout << std::setw(10) << "Last Name" << "|";
-    std::cout << std::setw(10) << "Nick Name" << "|\n";
+    std::cout << std::right << std::setw(10) << "Index" << "|";
+    std::cout << std::right << std::setw(10) << "First Name" << "|";
+    std::cout << std::right << std::setw(10) << "Last Name" << "|";
+    std::cout << std::right << std::setw(10) << "Nick Name" << "|\n";
     std::cout << std::setw(10) << "---------" << "|";
     std::cout << std::setw(10) << "---------" << "|";
     std::cout << std::setw(10) << "---------" << "|";
@@ -76,28 +88,21 @@ std::string ParseIt(std::string Name)
 }
 
 void DisplayContact(Contact user){
-    if (user.get_FirstName()== ""){
-        std::cout << "empty One!\n";
-        return; }
-
-    std::cout  << std::setw(10) << "Index" << "|";
-    std::cout  << std::setw(10) << "First Name" << "|";
-    std::cout << std::setw(10) << "Last Name" << "|";
-    std::cout << std::setw(10) << "Nick Name" << "|";
-    std::cout << std::setw(10) << "Secret" << "|";
-    std::cout << std::setw(10) << "Phone Num" << "|\n";
-    std::cout << std::setw(10) << "---------" << "|";
-    std::cout << std::setw(10) << "---------" << "|";
-    std::cout << std::setw(10) << "---------" << "|";
-    std::cout << std::setw(10) << "---------" << "|";
-    std::cout << std::setw(10) << "---------" << "|";
-    std::cout << std::setw(10) << "---------" << "|\n";
-
-    std::cout << std::setw(10) << user.get_FirstName() << "|";
-    std::cout << std::setw(10) << user.get_LastName() << "|";
-    std::cout << std::setw(10) << user.get_NickName() << "|";
-    std::cout << std::setw(10) << user.get_DarkestSecret() << "|";
-    std::cout << std::setw(10) << user.get_PhoneNumber() << "|\n";
+    if (user.get_FirstName()== "")
+    {
+        std::cout << "Empty One!\n";
+        return ;
+    }
+    std::cout << "\nFirst Name: ";
+    std::cout << user.get_FirstName() << "\n";
+    std::cout << "Last Name: ";
+    std::cout << user.get_LastName() << "\n";
+    std::cout << "Nick Name: ";
+    std::cout << user.get_NickName() << "\n";
+    std::cout << std::setw(11) << "Secret: ";
+    std::cout << user.get_DarkestSecret() << "\n";
+    std::cout << "Phone Num: ";
+    std::cout << user.get_PhoneNumber() << "\n\n";
 }
 
 int main()
@@ -111,7 +116,11 @@ int main()
         if (!getline(std::cin, input)){
             std::cout << "EOF reached!!\n";
             return 0;
-        }if (CheckIfEmpty(input)){
+        }else if (Not_printable(input)){
+                  std::cout << "None Printable character reached!\n";
+            continue ;
+        }
+        if (CheckIfEmpty(input)){
             std::cout << "Empty Line!\n";
             continue;
         }if (input == "ADD")

@@ -1,6 +1,12 @@
 #include "Utils.hpp"
 
-// Contact Class methods definition ***************
+
+Contact::Contact(){
+}
+
+Contact::~Contact(){
+}
+
 void Contact::set_firstname(std::string firstname){
     First_name = firstname;
 }

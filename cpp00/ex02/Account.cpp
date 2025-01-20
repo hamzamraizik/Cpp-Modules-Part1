@@ -7,6 +7,9 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
+Account::Account(void) {
+}
+
 Account::Account( int initial_deposit){
     // initialize the infos of the account
     _accountIndex = _nbAccounts;
@@ -28,6 +31,8 @@ Account::~Account(void){
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed\n";
 }
 
+
+/*       getters implementation    **/
 int Account::getNbAccounts(void){
     return (_nbAccounts);
 }
@@ -35,20 +40,20 @@ int Account::getNbAccounts(void){
 int Account::getNbDeposits(void){
     return (_totalNbDeposits);
 }
+
 int Account::getNbWithdrawals(void){
     return (_totalNbWithdrawals);
-}
-void Account::displayAccountsInfos(void){
-    _displayTimestamp();
-    std::cout << "accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:" 
-        << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << "\n";
 }
 
 int Account::getTotalAmount(void) {
     return (_totalAmount);
 }
 
-
+void Account::displayAccountsInfos(void){
+    _displayTimestamp();
+    std::cout << "accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:" 
+        << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << "\n";
+}
 
 void Account::makeDeposit(int deposit){
     // i store it to display it
@@ -127,7 +132,4 @@ void Account::_displayTimestamp(void) {
               << (localTime->tm_min < 10 ? "0" : "") << localTime->tm_min
               << (localTime->tm_sec < 10 ? "0" : "") << localTime->tm_sec
               << "] ";
-}
-
-Account::Account(void) {
 }
