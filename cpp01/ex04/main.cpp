@@ -1,55 +1,33 @@
-#include "main.hpp"
-//npos
-void replace_word(std::string& line, char *s1, char *s2){
-    size_t fonded;
-    int i = 0;
-
-    std::string word = s2;
-    while (line[i])
-    {
-        if ((fonded = line.find(s1)))
-        {
-            if (i == fonded)
-            {
-                for (int j = 0; j < word.length() && line[i]; j++)
-                {
-                    line[i] = word[j];
-                    i++;
-                }
-            }
-        }
-        i++;
-    }
-}
+#include "Utils.hpp"
 
 int main(int ac, char **av)
 {
-
     if (ac != 4){
-            std::cout << "invalid args!" << std::endl;
+            std::cout << "invalid args!\n";
             return 1;}
     std::ifstream infile;
-
     infile.open(av[1]);
-    if (!infile.is_open())
+    if (!infile)
     {
-        std::cerr << "Error: Could not open file for reading." << std::endl;
+        std::cerr << "Error: Could not open file for reading.\n";
         return 1;
     }
     std::string filename = av[1];
     std::ofstream outfile;
-    outfile.open(filename + ".replace");
-    if (!outfile.is_open())
+    outfile.open((filename + ".replace").c_str());
+    if (!outfile)
     {
-        std::cerr << "Error: Could not open file for writing." << std::endl;
+        std::cerr << "Error: Could not open file for writing.\n";
         return 1;
     }
     std::string allLines;
-    char    c;
-    while (infile.get(c)){
-        allLines += c;
+    std::string Buffer;
+    while ((getline(infile, Buffer))){
+        Buffer += "\n";
+        allLines += Buffer;
     }
     infile.close();
     replace_word(allLines, av[2], av[3]);
     outfile << allLines;
+    outfile.close();
 }

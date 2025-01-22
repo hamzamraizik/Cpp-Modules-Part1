@@ -1,5 +1,7 @@
+#ifndef _ZOMBIE__
+#define _ZOMBIE__
+
 #include <iostream>
-#include <cstdlib>
 
 class Zombie{
     private:
@@ -7,9 +9,10 @@ class Zombie{
     public:
         void setName(std::string Newname);
         void announce(void);
-
         Zombie();
         ~Zombie();
 };
 
 Zombie* zombieHorde( int N, std::string name );
+
+#endif

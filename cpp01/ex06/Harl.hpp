@@ -1,5 +1,6 @@
+#ifndef HARL__
+#define HARL__
 #include <iostream>
-
 
 class Harl{
     private:
@@ -10,3 +11,6 @@ class Harl{
     public:
         void complain( std::string level );
 };
+
+int checkLevel(std::string str);
+#endif

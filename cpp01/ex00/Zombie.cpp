@@ -10,3 +10,6 @@ void Zombie::setName(std::string randomName){
 Zombie::~Zombie(){
     std::cout << name  << " destroyed.\n";
 }
+Zombie::Zombie(){
+    std::cout << " Created.\n";
+}
