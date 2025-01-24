@@ -128,3 +128,51 @@ Fixed   Fixed::operator*(const Fixed& a)
 
     return b;
 }
+
+
+
+Fixed::Fixed(){
+    integer = 0;
+    // std::cout << "Default constructor called" << std::endl;
+
+}
+
+Fixed::Fixed(const Fixed& reference){
+    
+    // std::cout << "Copy constructor called" << std::endl;
+    integer = reference.integer;
+}
+
+Fixed& Fixed::operator=(const Fixed& a){
+    // std::cout << "Copy assignment operator called" << std::endl;
+    this->integer = a.integer;
+    return *this;
+}
+
+Fixed::~Fixed()
+{
+    // std::cout << "Destructor called" << std::endl;
+}
+
+Fixed::Fixed(const int x){
+    // std::cout << "Int constructor called" << std::endl;
+    integer = x << f_bits;
+}
+
+Fixed::Fixed(const float x){
+    // std::cout << "Float constructor called" << std::endl;
+    integer = roundf(x * (1 << f_bits));
+}
+
+int Fixed::toInt(void) const{
+    return (integer >> f_bits);
+}
+
+float   Fixed::toFloat( void ) const {
+    return ((float)integer / (1 <<  f_bits));
+}
+
+int Fixed::getRawBits(void ) const{
+    // std::cout << "getRawBits member function called" << std::endl;
+    return integer;
+}
