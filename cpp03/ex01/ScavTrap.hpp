@@ -1,4 +1,7 @@
-# include "ClapTrap.hpp"
+#ifndef __SCAV__
+#define __SCAV__
+
+#include "ClapTrap.hpp"
 
 /*       /\   The private members in the base class cannot be directly accessed in
         /  \     the derived class, while protected and public members can be directly accessed. 
@@ -17,4 +20,7 @@ class ScavTrap: public ClapTrap{
         ScavTrap(std::string& UpdatedName);
         ScavTrap& operator=(ScavTrap& other);
         ~ScavTrap();
+        void attack(std::string& target);
 };
+
+#endif

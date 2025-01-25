@@ -31,7 +31,6 @@ void ClapTrap::attack(const std::string& target){
 void ClapTrap::takeDamage(unsigned int amount){
     if (!HitPoints || !EnergyPoints || (HitPoints - amount <= 0))
         return ;
-    // AttackDamage += amount;
     HitPoints -= amount;
     std::cout << "ClapTrap " <<  Name << " Takes " << 
         amount <<  " points of damage!\n";
@@ -44,6 +43,7 @@ void ClapTrap::beRepaired(unsigned int amount){
     HitPoints += amount;
     EnergyPoints--;
 }
+
 ClapTrap::ClapTrap(){
     std::cout << "Default constructor called\n";
 }

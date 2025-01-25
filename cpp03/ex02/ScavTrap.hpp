@@ -1,4 +1,6 @@
-# include "ClapTrap.hpp"
+#ifndef _SCAVT__
+#define _SCAVT__
+#include "ClapTrap.hpp"
 
 /*       /\   The private members in the base class cannot be directly accessed in
         /  \     the derived class, while protected and public members can be directly accessed. 
@@ -18,3 +20,5 @@ class ScavTrap: public ClapTrap{
         ScavTrap& operator=(ScavTrap& other);
         ~ScavTrap();
 };
+
+#endif
