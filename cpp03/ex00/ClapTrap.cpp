@@ -2,6 +2,7 @@
 
 ClapTrap::ClapTrap(ClapTrap& copyOne){
     *this = copyOne;
+    std::cout << "ClapTrap Copy constructor called\n";
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap& other){
@@ -17,7 +18,7 @@ ClapTrap::ClapTrap(std::string& name){
     HitPoints = 10;
     EnergyPoints = 10;
     AttackDamage = 0;
-    std::cout << name << " Created!\n";
+    std::cout << name << " ClapTrap parametrized constructor called!\n";
 }
 
 void ClapTrap::attack(const std::string& target){
@@ -29,7 +30,7 @@ void ClapTrap::attack(const std::string& target){
 };
 
 void ClapTrap::takeDamage(unsigned int amount){
-    if (!HitPoints || !EnergyPoints || (HitPoints - amount <= 0))
+    if (!HitPoints || !EnergyPoints || (HitPoints - amount < 0))
         return ;
     HitPoints -= amount;
     std::cout << "ClapTrap " <<  Name << " Takes " << 
@@ -42,7 +43,7 @@ void ClapTrap::beRepaired(unsigned int amount){
     std::cout << "has Repaired with " << amount << " points.\n";
     HitPoints += amount;
     EnergyPoints--;
-}
+}  
 
 ClapTrap::ClapTrap(){
     std::cout << "Default constructor called\n";

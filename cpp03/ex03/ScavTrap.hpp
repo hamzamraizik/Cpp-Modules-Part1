@@ -1,3 +1,6 @@
+#ifndef _SCAV__
+#define _SCAV__
+
 # include "ClapTrap.hpp"
 
 /*       /\   The private members in the base class cannot be directly accessed in
@@ -18,3 +21,5 @@ class ScavTrap: virtual public ClapTrap{
         ScavTrap& operator=(ScavTrap& other);
         ~ScavTrap();
 };
+
+#endif

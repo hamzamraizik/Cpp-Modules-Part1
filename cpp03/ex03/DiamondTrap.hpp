@@ -1,3 +1,6 @@
+#ifndef _DIAMOND_
+#define _DIAMOND_
+
 #include "FragTrap.hpp"
 
 class DiamondTrap: public FragTrap, virtual public ScavTrap{
@@ -13,3 +16,5 @@ class DiamondTrap: public FragTrap, virtual public ScavTrap{
                 void attack(std::string& target);
                 ~DiamondTrap();
 };
+
+#endif
