@@ -16,3 +16,7 @@ void AMateria::use(ICharacter& target){
 std::string const & AMateria::getType() const {
     return type;
 }
+
+AMateria::~AMateria(){
+    
+}

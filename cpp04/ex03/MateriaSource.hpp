@@ -1,6 +1,10 @@
 #ifndef _MATERIASOURCE
 #define _MATERIASOURCE
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "IMateriaSource.hpp"
 
 class MateriaSource: public IMateriaSource{
     private:

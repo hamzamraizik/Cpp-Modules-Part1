@@ -1,12 +1,10 @@
 #ifndef _AMATERIA_
 #define _AMATERIA_
+
 #include "ICharacter.hpp"
-#include "Character.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "IMateriaSource.hpp"
 #include <iostream>
 
+class Icharacter;
 class AMateria{
     protected:
         std::string type;
@@ -15,8 +13,8 @@ class AMateria{
         AMateria();
         // AMateria(cosnt AMateria& other);
         // AMateria& operator=(cosnt AMateria& other);
-        // ~AMateria();
         AMateria(const std::string& Type);
+        virtual ~AMateria();
 
         std::string const & getType() const; // Returns the materia type
  

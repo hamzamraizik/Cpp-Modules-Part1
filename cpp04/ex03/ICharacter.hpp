@@ -1,8 +1,9 @@
 #ifndef ICHAR__
 #define ICHAR__
 
-#include "AMateria.hpp"
+#include <iostream>
 
+class AMateria;
 class ICharacter{
     public:
         virtual ~ICharacter() {}

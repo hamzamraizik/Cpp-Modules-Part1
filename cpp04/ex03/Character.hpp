@@ -1,7 +1,10 @@
 #ifndef CHARACTER_
 #define CHARACTER_
 
-#include "AMateria.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
+class AMateria;
+class ICharacter;
 
 class Character: public ICharacter{
     protected:
@@ -14,7 +17,6 @@ class Character: public ICharacter{
         Character(const Character& other);
         Character& operator=(const Character& other);
         ~Character();
-
 
         /*other member functions: */
         std::string const& getName() const;

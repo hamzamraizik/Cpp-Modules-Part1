@@ -1,4 +1,5 @@
 #include "AMateria.hpp"
+#include "Cure.hpp"
 
 Cure::Cure(){
     type = "Cure";
@@ -11,6 +12,7 @@ Cure::Cure(const Cure& other){
 
 Cure& Cure::operator=(const Cure& other){
     this->type = other.type;
+    return *this;
 }
 
 Cure::~Cure(){
@@ -23,5 +25,5 @@ AMateria* Cure::clone() const{
 }
 
 void Cure::use(ICharacter& target){
-    std::cout << "* heals " << type << "'s wounds *" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
