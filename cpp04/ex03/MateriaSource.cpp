@@ -2,7 +2,6 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(){
-    std::cout << "MateriaSource Default Constructor\n";
     for (int i = 0; i < 4; i++)
     {
         templates[i] = NULL;
@@ -24,9 +23,14 @@ AMateria* MateriaSource::createMateria(std::string const & type){
     for (int i = 0; i < 4; i++)
     {
         if (templates[i] && templates[i]->getType() == type){
-            std::cout << "\n\n\nCreate Materia\n\n";
             return templates[i]->clone();
         }
     }
     return NULL;
+}
+
+MateriaSource::~MateriaSource(){
+    for (int i = 0; i < 4; i++){
+        delete (templates[i]);
+    }
 }
