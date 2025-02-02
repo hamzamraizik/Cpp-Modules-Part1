@@ -2,6 +2,7 @@ SRCF= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp Icharacter.cpp Materi
 OFILES= main.o AMateria.o Character.o Cure.o Ice.o Icharacter.o MateriaSource.o
 FLAGS =  -Wall -Wextra -Werror -std=c++98
 CPP = c++
+
 NAME = materia
 
 all: $(NAME)

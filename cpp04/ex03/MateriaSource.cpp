@@ -1,20 +1,30 @@
 #include "AMateria.hpp"
 #include "MateriaSource.hpp"
 
+MateriaSource::MateriaSource(){
+    std::cout << "MateriaSource Default Constructor\n";
+    for (int i = 0; i < 4; i++)
+    {
+        templates[i] = NULL;
+    }
+    
+}
 
 void MateriaSource::learnMateria(AMateria* Template){
     for (int i = 0; i < 4; i++)
     {
         if (templates[i] == NULL){
-            this->templates[i] = Template->clone();
+            this->templates[i] = Template;
             return;
         }
     }
 }
+
 AMateria* MateriaSource::createMateria(std::string const & type){
-    for (int i = 0; i < 4; i++){
-        if (templates[i] && templates[i]->getType() == type
-        && (i == 3 || templates[i + 1] == NULL)){
+    for (int i = 0; i < 4; i++)
+    {
+        if (templates[i] && templates[i]->getType() == type){
+            std::cout << "\n\n\nCreate Materia\n\n";
             return templates[i]->clone();
         }
     }

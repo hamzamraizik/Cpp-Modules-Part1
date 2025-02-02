@@ -10,6 +10,7 @@ class MateriaSource: public IMateriaSource{
     private:
         AMateria *templates[4];
     public:
+        MateriaSource();
         void learnMateria(AMateria* Template);
         AMateria* createMateria(std::string const & type);
 

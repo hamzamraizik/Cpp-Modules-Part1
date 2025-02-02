@@ -2,7 +2,7 @@
 #include "Cure.hpp"
 
 Cure::Cure(){
-    type = "Cure";
+    type = "cure";
     std::cout << "Cure Default constructor\n";
 }
 
@@ -20,10 +20,10 @@ Cure::~Cure(){
 }
 
 AMateria* Cure::clone() const{
-    std::cout << "Cure object cloned\n";
+    // std::cout << "Cure object cloned\n";
     return (new Cure(*this));
 }
 
 void Cure::use(ICharacter& target){
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    std::cout << "\n\n\n* heals " << target.getName() << "'s wounds *\n\n\n\n" << std::endl;
 }

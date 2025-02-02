@@ -54,6 +54,7 @@ void Character::equip(AMateria* m){
     for (int i = 0; i < 4; i++){
         if (_inventory[i] == NULL){
             _inventory[i] = m;
+            std::cout << "an AMateria has been equiped.\n";
             return ;
         }
     }
@@ -62,14 +63,19 @@ void Character::equip(AMateria* m){
 void Character::unequip(int idx){
     if (idx >= 0 && idx < 4){
         _inventory[idx] = NULL;
+        std::cout << "an AMateria has been unequiped.\n";
     }
 }
 
 void Character::use(int idx, ICharacter& target){
     if (idx >= 0 && idx < 4 && _inventory[idx] != NULL)
     {
+        std::cout << "\nCharacter use() called\n";
         _inventory[idx]->use(target);
+        return;
     }
+    else
+        std::cout << "Not a valid idx!!\n";
 }
 
 std::string const& Character::getName() const{
