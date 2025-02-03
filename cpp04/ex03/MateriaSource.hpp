@@ -1,18 +1,20 @@
-#ifndef _MATERIASOURCE
-#define _MATERIASOURCE
-#include "ICharacter.hpp"
+#ifndef _MATERIASOURCE_HPP
+#define _MATERIASOURCE_HPP
+
 #include "Character.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
+#include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
 class MateriaSource: public IMateriaSource{
     private:
         AMateria *templates[4];
     public:
+        //Canonical form:
         MateriaSource();
-        ~MateriaSource();
-        void learnMateria(AMateria* Template);
+        virtual ~MateriaSource();
+        MateriaSource(const MateriaSource& other);
+        MateriaSource& operator=(const MateriaSource& other);
+        void learnMateria(AMateria* m);
         AMateria* createMateria(std::string const & type);
 
 };

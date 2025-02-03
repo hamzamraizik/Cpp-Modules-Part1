@@ -4,13 +4,13 @@
 #include "MateriaSource.hpp"
 
 
-void ff(){
-    system("leaks materia");
-}
+// void ff(){
+//     system("leaks materia");
+// }
+
 int main()
 {
-
-    atexit(ff);
+    // atexit(ff);
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
@@ -28,4 +28,5 @@ int main()
     delete src;
     return 0;
 }
- 
+
+//

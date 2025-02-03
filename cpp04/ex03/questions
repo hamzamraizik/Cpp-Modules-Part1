@@ -1,0 +1,10 @@
+/*
+
+* why in Cure(Cure& other); i must do :AMateria(other) 
+in initialization lists ?
+
+* what is the differents between NULL and nullptr ?
+
+
+
+*/

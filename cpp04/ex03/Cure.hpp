@@ -10,13 +10,11 @@ class AMateria;
 
 class Cure: public AMateria{
     public:
-    // canonical form:
         Cure();
         Cure(const Cure& other);
         Cure& operator=(const Cure& other);
-        ~Cure();
+        virtual ~Cure();
 
-        // vertual functions definition:
         AMateria* clone() const;
         void use(ICharacter& target);
 

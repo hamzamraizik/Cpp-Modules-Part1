@@ -11,9 +11,9 @@ class AMateria{
     public:
         /*Canonical form:*/
         AMateria();
-        // AMateria(cosnt AMateria& other);
-        // AMateria& operator=(cosnt AMateria& other);
         AMateria(const std::string& Type);
+        AMateria(const AMateria& other);
+        AMateria& operator=(const AMateria& other);
         virtual ~AMateria();
 
         std::string const & getType() const; // Returns the materia type

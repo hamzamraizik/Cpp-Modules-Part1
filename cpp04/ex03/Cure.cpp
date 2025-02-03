@@ -1,26 +1,33 @@
 #include "AMateria.hpp"
 #include "Cure.hpp"
 
-Cure::Cure(){
-    type = "cure";
+Cure::Cure() : AMateria("cure"){
 }
 
-Cure::Cure(const Cure& other){
-    *this = other;
+Cure::Cure(const Cure& other) : AMateria(other)
+{
+    if (this != &other)
+    {
+        *this = other;
+    }
 }
 
-Cure& Cure::operator=(const Cure& other){
-    this->type = other.type;
+Cure &Cure::operator=(const Cure &other)
+{
+    if (this != &other){
+        this->type = other.type;
+    }
     return *this;
 }
 
 Cure::~Cure(){
 }
 
-AMateria* Cure::clone() const{
+AMateria *Cure::clone() const {
     return (new Cure(*this));
 }
 
-void Cure::use(ICharacter& target){
+void Cure::use(ICharacter &target)
+{
     std::cout << "* heals " << target.getName() << "'s wounds *\n";
 }

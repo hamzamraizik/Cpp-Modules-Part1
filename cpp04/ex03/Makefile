@@ -1,5 +1,5 @@
-SRCF= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp Icharacter.cpp MateriaSource.cpp
-OFILES= main.o AMateria.o Character.o Cure.o Ice.o Icharacter.o MateriaSource.o
+SRCF= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+OFILES= main.o AMateria.o Character.o Cure.o Ice.o MateriaSource.o
 FLAGS =  -Wall -Wextra -Werror -std=c++98
 CPP = c++
 

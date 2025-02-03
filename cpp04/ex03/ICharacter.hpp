@@ -1,5 +1,5 @@
-#ifndef ICHAR__
-#define ICHAR__
+#ifndef ICHAR__HPP
+#define ICHAR__HPP
 
 #include <iostream>
 
