@@ -29,7 +29,6 @@ Character& Character::operator=(const Character& other){
                 _inventory[i] = NULL;
             }
         }
-        // Copying the inventory
         for (int i = 0; i < 4; i++){
             if (other._inventory[i] != NULL) {
                 _inventory[i] = other._inventory[i]->clone();

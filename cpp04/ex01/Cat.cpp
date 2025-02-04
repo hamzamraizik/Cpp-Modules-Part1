@@ -7,9 +7,12 @@ Cat::Cat(){
 }
 
 Cat& Cat::operator=(const Cat& other){
-    delete this->brain;
-    this->brain = new Brain(*other.brain);
-    this->type = other.type;
+     if (this != &other)
+    {
+        delete this->brain;
+        this->brain = new Brain(*other.brain);
+        this->type = other.type;
+    }
     return *this;
 }
 

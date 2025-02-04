@@ -6,7 +6,6 @@ MateriaSource::MateriaSource(){
     {
         templates[i] = NULL;
     }
-    
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other){
@@ -16,18 +15,20 @@ MateriaSource::MateriaSource(const MateriaSource& other){
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other){
-    for (int i = 0; i < 4; i++)
+    if (this != &other)
     {
-        if (templates[i])
+        for (int i = 0; i < 4; i++)
         {
-            delete templates[i];
-            templates[i] = NULL;
+            if (templates[i])
+            {
+                delete templates[i];
+                templates[i] = NULL;
+            }
         }
-    }
-    
-    for (int i = 0; i < 4; i++){
-        if (other.templates[i] != NULL)
-            templates[i] = other.templates[i]->clone();
+        for (int i = 0; i < 4; i++){
+            if (other.templates[i] != NULL)
+                templates[i] = other.templates[i]->clone();
+        }
     }
     return *this;
 }

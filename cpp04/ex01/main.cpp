@@ -1,13 +1,8 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-void ff()
-{
-    system("leaks animal");
-}
 int main()
 {
-    atexit(ff);
     Dog dog;
     Dog d(dog);
     Dog d1;
@@ -17,7 +12,7 @@ int main()
     Cat c1(c);
     Cat c2 = c1;
 
-    const Animal* animals[10];
+    Animal* animals[10];
     for ( int i = 0; i < 5; i++)
     {
         animals[i] = new Cat;

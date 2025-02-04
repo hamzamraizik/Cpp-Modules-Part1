@@ -1,13 +1,9 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-void ff()
-{
-    system("leaks animal");
-}
+
 int main()
 {
-    atexit(ff);
     Dog dog;
     Dog d(dog);
     Dog d1;

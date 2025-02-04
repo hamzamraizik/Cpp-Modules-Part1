@@ -1,7 +1,7 @@
 #ifndef _ANIMAL_
 #define _ANIMAL_
 #include <iostream>
-//!!!!! 
+
 class Animal{
     protected:
         std::string type;

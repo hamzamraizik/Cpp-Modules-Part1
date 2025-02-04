@@ -12,5 +12,4 @@ class Brain{
         std::string ideas[100];
 };
 
-
 #endif

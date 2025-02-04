@@ -10,7 +10,6 @@ class Character: public ICharacter{
         std::string _name;
         AMateria*   _inventory[4];
     public:
-    /* Canonical form :*/
         Character();
         Character(const std::string& Name);
         Character(const Character& other);

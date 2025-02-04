@@ -3,14 +3,13 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-
-// void ff(){
-//     system("leaks materia");
-// }
-
 int main()
 {
-    // atexit(ff);
+    AMateria* test1 = new Cure();
+    ICharacter *character = new Character("hamza");
+    test1->use(*character);
+    delete character;
+    delete test1;
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());

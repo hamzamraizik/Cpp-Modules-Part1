@@ -7,6 +7,7 @@ AMateria::AMateria(){
 AMateria::AMateria(const AMateria& other){
     *this = other;
 }
+
 AMateria& AMateria::operator=(const AMateria& other){
     if (this != &other){
         type = other.type;
